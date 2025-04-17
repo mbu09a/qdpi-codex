@@ -6,7 +6,7 @@ export function loadPrompt(): string {
   return fs.readFileSync(promptPath, "utf-8");
 }
 
-export function runAgent(args: string[]): void {
+export function runAgent(_args: string[]): void {
   // For now, just print the prompt
   console.log(loadPrompt());
 }
