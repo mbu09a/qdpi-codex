@@ -10,7 +10,7 @@
     "lint": "eslint \"src/**/*.{ts,tsx,js}\" --max-warnings=0",
     "test": "jest --passWithNoTests",
     "clean": "rimraf dist coverage",
-    "api": "uvicorn src.api.app:app --reload",
+    "api": "cross-env PYTHONPATH=. uvicorn src.api.app:app --reload",
     "start:api": "npm run api"
   },
   "devDependencies": {
@@ -18,6 +18,7 @@
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^8.30.1",
     "@typescript-eslint/parser": "^8.30.1",
+    "cross-env": "^7.0.3",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.5",

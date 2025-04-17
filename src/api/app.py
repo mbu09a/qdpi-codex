@@ -1,7 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Any, Literal
-from src.bus.memory_bus import bus  # via pyright path mapping / ts-node esm
+from src.bus.memory_bus import bus
 
 class QuadPayload(BaseModel):
     direction: Literal["read", "ask", "receive", "index"]
