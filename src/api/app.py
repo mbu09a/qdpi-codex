@@ -15,5 +15,5 @@ app = FastAPI(title="qdpi‑codex API")
 @app.post("/quad")
 async def quad(payload: QuadPayload):
     """Echo endpoint — first step toward quad‑direction bus."""
-    result = bus.publish(payload.direction, payload.payload)
+    result = await bus.publish(payload.direction, payload.payload)
     return {"result": result} 
